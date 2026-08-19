@@ -25,13 +25,13 @@ years_of_exp = st.number_input("Years of Experience",0,40)
 df = pd.DataFrame({
  "Age":[age],
  "Gender":[gender],
- "Education_Level":[education_level],
+ "Education Level":[education_level],
  "Job Title":[job_title],
  "Years of Experience":[years_of_exp]
 })
 
 if st.button('Predict Salary'):
-  for col in encoder:
+ for col in encoder:
     df[col] = encoder[col].transform(df[col])
 
   prediction = model.predict(df)
